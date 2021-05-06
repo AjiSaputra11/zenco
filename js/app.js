@@ -1,8 +1,7 @@
-let loadImg;
-function loadBrand() {
-    loadImg = setTimeout(showPage, 1000);
-}
-function showPage() {
-    document.querySelector('.loader-img').style.display = 'none';
-    document.querySelector('#full-page').style.display = 'block';
+document.getElementById("liveToastBtn").onclick = function() {
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    var toastList = toastElList.map(function (toastEl) {
+    return new bootstrap.Toast(toastEl)
+    });
+    toastList.forEach(toast => toast.show()); // This show them
 }
